@@ -1,3 +1,19 @@
 http://stackoverflow.com/questions/18441846/how-to-sort-an-arraylist-in-java
 https://www.mkyong.com/java/java-object-sorting-example-comparable-and-comparator/
 http://www.javacreed.com/sorting-objects-using-comparator/
+
+http://stackoverflow.com/questions/6850611/sort-a-list-of-objects-by-multiple-fields
+
+public class GraduationCeremonyComparator implements Comparator<graduationCeremony> {
+    public int compare(graduationCeremony o1, graduationCeremony o2) {
+        int value1 = o1.campus.compareTo(o2.campus);
+        if (value1 == 0) {
+            int value2 = o1.faculty.compareTo(o2.faculty);
+            if (value2 == 0) {
+                return o1.building.compareTo(o2.building);
+            } else {
+                return value2;
+        }
+        return value1;
+    }
+}
